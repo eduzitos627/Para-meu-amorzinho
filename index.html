@@ -29,13 +29,10 @@
             font-size: 1.2em;
             line-height: 1.6;
         }
-        /* Estilo para as letras caindo */
-        .letra {
+        /* Estilo para as flores */
+        .flor {
             position: absolute;
             top: -50px;
-            font-size: 30px;
-            font-weight: bold;
-            color: #e74c3c; /* Cor das letras */
             animation: cair linear infinite;
         }
         @keyframes cair {
@@ -54,9 +51,15 @@
         <source src="parameuamor.mp4" type="video/mp4">
         Seu navegador não suporta o elemento de vídeo.
     </video>
+  
+      <p>THE LOOK OF LOVE, TE DEDICO ESSA MEU AMOR
+        ESTE SITE VAI SER SEU PRA SEMPRE, TE AMO TANTO VOCE
+        MERECE ISSO E MUITO MAIS ENT VOU IR ATUALIZANDO COM
+        TODOS OS VIDEOS QUE FIZER PARA VOCE 
+      </p>
 
-    <!-- Segundo vídeo (será removido após 4 segundos) -->
-    <video id="segundoVideo" controls>
+    <!-- Segundo vídeo -->
+    <video controls>
         <source src="parameuamor2.mp4" type="video/mp4">
         Seu navegador não suporta o elemento de vídeo.
     </video>
@@ -73,34 +76,3 @@ Ta-ah-ah ta-ta-ra-ta-ra
 Ta-ta-ta ta-ta-ra-ta-ra
 Ta-ta-ta ta-ta-ra-ta-ra-ta</p>
 
-    <!-- Letras "N" e "E" caindo -->
-    <script>
-        // Função para criar as letras "N" e "E"
-        function criarLetra() {
-            const letras = ["N", "E"]; // Array com as letras
-            const letra = document.createElement('div');
-            letra.classList.add('letra');
-            letra.textContent = letras[Math.floor(Math.random() * letras.length)]; // Escolhe "N" ou "E" aleatoriamente
-            letra.style.left = Math.random() * window.innerWidth + 'px'; // Posição horizontal aleatória
-            letra.style.animationDuration = Math.random() * 3 + 2 + 's'; // Velocidade aleatória
-            document.body.appendChild(letra);
-
-            // Remove a letra após cair
-            setTimeout(() => {
-                letra.remove();
-            }, 5000); // 5 segundos
-        }
-
-        // Cria letras em intervalos regulares
-        setInterval(criarLetra, 300); // Cria uma letra a cada 0.3 segundos
-
-        // Remove o segundo vídeo após 4 segundos
-        setTimeout(() => {
-            const segundoVideo = document.getElementById('segundoVideo');
-            if (segundoVideo) {
-                segundoVideo.remove(); // Remove o vídeo da página
-            }
-        }, 4000); // 4 segundos
-    </script>
-</body>
-</html>
